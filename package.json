@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-label": "^0.1.4",
     "@tailwindcss/forms": "^0.4.0",
     "next": "latest",
     "react": "^17.0.2",

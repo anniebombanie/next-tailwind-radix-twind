@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Link from 'next/link'
+import { Label } from '@radix-ui/react-label'
 
 class LoginPage extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <html class="min-h-screen bg-slate-100">
+      <html class="min-h-screen bg-gray-100">
         <div className="login-form">
           <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -22,7 +22,7 @@ class LoginPage extends Component {
                 src="icon.svg"
                 alt="Workflow"
               />
-              <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
                 Log in to Pastel
               </h2>
               <p className="mt-2 text-center text-sm text-gray-600">
@@ -40,12 +40,12 @@ class LoginPage extends Component {
               <div className="bg-white py-10 px-6 sm:rounded-lg sm:px-10">
                 <form className="space-y-6" action="#" method="POST">
                   <div>
-                    <label
+                    <Label
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Email address
-                    </label>
+                      Email
+                    </Label>
                     <div className="mt-1">
                       <input
                         id="email"
@@ -53,18 +53,18 @@ class LoginPage extends Component {
                         type="email"
                         autoComplete="email"
                         required
-                        className="block w-full appearance-none rounded-sm border border-gray-300 px-3 py-2 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                        className="block w-full appearance-none rounded-sm border border-gray-300 px-3 py-3 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label
+                    <Label
                       htmlFor="password"
                       className="block text-sm font-medium text-gray-700"
                     >
                       Password
-                    </label>
+                    </Label>
                     <div className="mt-1">
                       <input
                         id="password"
@@ -72,14 +72,14 @@ class LoginPage extends Component {
                         type="password"
                         autoComplete="current-password"
                         required
-                        className="block w-full appearance-none rounded-sm border border-gray-300 px-3 py-2 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
+                        className="block w-full appearance-none rounded-sm border border-gray-300 px-3 py-3 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                       />
                     </div>
                   </div>
-                  <div className='flex justify-center'>
+                  <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="flex w-36 align-center justify-center rounded-md border border-transparent transition-colors bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="align-center flex w-36 justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     >
                       Log in
                     </button>
