@@ -8,19 +8,34 @@ class SignUp extends Component {
     return (
       <html className="min-h-screen bg-white">
         <div className="flex min-h-screen">
-          <div className="relative block hidden w-0 w-full flex-1 bg-gradient-to-b from-blue-50 to-indigo-200 lg:block">
-            <div className="absolute">
-              <div className="relative lg:col-span-1">
-                <FontAwesomeIcon icon={'star'} />
-                <FontAwesomeIcon icon={'star'} />
-                <FontAwesomeIcon icon={'star'} />
-                <FontAwesomeIcon icon={'star'} />
-                <FontAwesomeIcon icon={'star'} />
-                <blockquote className="mt-6 text-white">
-                  <p className="text-xl font-medium">
+          <div className="block hidden w-0 flex-1 bg-gradient-to-b from-blue-50 to-indigo-200 lg:block">
+            <div className="l:px-28 flex min-h-screen items-center py-12 px-20 lg:px-24 xl:px-32 2xl:px-44">
+              <div>
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24' }}
+                />
+                <blockquote className="mt-4 text-gray-900">
+                  <p className="text-xl font-bold">
                     The missing link between client and builder!!
                   </p>
-                  <p className="text-lg">
+                  <p className="text-sm">
                     Impeccable experience. Super smooth and couldn't be simpler
                     to integrate into your project feedback workflow. Trello
                     export was the cherry on top. Throw out your old revision
@@ -28,32 +43,30 @@ class SignUp extends Component {
                     service.
                   </p>
                   <footer className="mt-6">
-                    <p className="flex flex-col font-medium">
+                    <p className="flex flex-col text-sm font-medium">
                       <span>Rhett Butler</span>
-                      <span>CEO, Workcation</span>
+                      <span className='text-gray-700'>Client Service Analyst</span>
                     </p>
                   </footer>
                 </blockquote>
               </div>
             </div>
           </div>
-          <div className="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+          <div className="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-28 xl:px-60">
             <div className="mx-auto w-full max-w-sm lg:w-96">
-              <div>
-                <img
-                  className="mx-auto h-14 w-auto"
-                  src="icon.svg"
-                  alt="Pastel"
-                  translate="no"
-                />
-                <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
-                  Create your account
-                </h2>
-                <p className="mt-2 text-sm text-gray-600">
-                  We’re excited to show you how Pastel can help you get feedback
-                  and approvals on your creative work effortlessly!
-                </p>
-              </div>
+              <img
+                className="mx-auto h-14 w-auto"
+                src="icon.svg"
+                alt="Pastel"
+                translate="no"
+              />
+              <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+                Happy Monday!
+              </h2>
+              <p className="mt-2 text-center text-sm text-gray-600">
+                We’re excited to show you how Pastel can help you get feedback
+                and approvals on your creative work effortlessly!
+              </p>
 
               <div className="mt-8">
                 <div className="mt-6">
@@ -113,7 +126,7 @@ class SignUp extends Component {
                         />
                       </div>
                     </div>
-                    <div className="relative flex items-start">
+                    <div className="relative flex items-center">
                       <div className="flex h-5 items-center">
                         <input
                           id="privacy-terms-of-service"
@@ -123,7 +136,7 @@ class SignUp extends Component {
                           className="focus:ring-indigo-500 text-indigo-600 h-4 w-4 rounded border-gray-300"
                         />
                       </div>
-                      <div className="ml-3 text-sm">
+                      <div className="ml-3 text-xs">
                         <label
                           htmlFor="privacy-terms-of-service"
                           className="sr-only font-medium text-gray-700"
@@ -136,11 +149,11 @@ class SignUp extends Component {
                         >
                           I agree to the{' '}
                           <Link href="https://usepastel.com/privacy">
-                            <a>privacy policy</a>
+                            <a className="underline">privacy policy</a>
                           </Link>{' '}
                           and{' '}
                           <Link href="https://usepastel.com/terms">
-                            <a>terms of service</a>
+                            <a className="underline">terms of service</a>
                           </Link>
                         </p>
                       </div>
