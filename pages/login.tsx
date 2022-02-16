@@ -95,7 +95,7 @@ class LoginPage extends Component {
                     <button
 					onClick={this.onSubmit}
                       type="submit"
-                      className="align-center flex w-36 w-auto justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="btn"
                     >
                       Log in
                     </button>
