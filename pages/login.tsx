@@ -12,7 +12,8 @@ class LoginPage extends Component {
               <img
                 className="mx-auto h-14 w-auto"
                 src="icon.svg"
-                alt="Workflow"
+                alt="Pastel"
+				translate="no"
               />
               <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
                 Log in to Pastel

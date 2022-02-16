@@ -11,15 +11,15 @@ module.exports = {
 	colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        white: '#ffffff',
-        black: '#000000',
-        blue: {
+        'white': '#ffffff',
+        'black': '#000000',
+        'blue': {
           50: '#e2e9ff',
 		  200: '#BAE6FD',
           500: '#4f77ff',
           600: '#2953e2'
         },
-        gray: {
+        'gray': {
           50: '#F8FAFB',
           100: '#F1F4F7',
           200: '#E5EAF0',
@@ -31,36 +31,36 @@ module.exports = {
           800: '#29313E',
           900: '#10141D'
         },
-		stone: {
+		'stone': {
 			200: '#E7E5E4'
 		},
-		rose: {
+		'rose': {
 			50: '#FFF1F2',
 			200: '#FECDD3',
 			300: '#FDA4AF'
 		},
-		amber: {
+		'amber': {
 			100: '#FEF3C7',
 			200: 'FDE68A',
 			300: '#FCD34D',
 			400: '#FBBF24',
 			600: '#E11D48'
 		},
-		pink: {
+		'pink': {
 			300: '#F9A8D4'
 		},
-		orange: {
+		'orange': {
 			300: '#FDBA74'
 		},
-		teal: {
+		'teal': {
 			400: '#2DD4BF',
 			500: '#14B8A6',
 			600: '#0D9488'
 		},
-		indigo: {
+		'indigo': {
 			200: '#C7D2FE'
 		},
-		emerald: {
+		'emerald': {
 			50: '#ECFDF5',
 			200: '#A7F3D0',
 			500: '#10B981',

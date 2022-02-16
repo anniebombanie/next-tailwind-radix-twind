@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
 import Link from 'next/link'
 
-class ForgotPassword extends Component {
+class SSO extends Component {
   render() {
     return (
       <html className="min-h-screen bg-gray-100">
@@ -16,12 +16,16 @@ class ForgotPassword extends Component {
 				translate="no"
               />
               <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
-                Forgot your password?
+                Log in with Single Sign-On
               </h2>
-              <p className="mt-4 w-96 text-center text-sm text-gray-600 mx-auto">
-                We’ll get this fixed in no time. Enter the email address you
-                used to sign up for Pastel, and we’ll send you a link to reset
-                your password.
+			  <p className="mt-2 text-center text-sm text-gray-600">
+                Or{' '}
+                <a
+                  href="#"
+                  className="font-medium text-blue-500 hover:text-blue-600"
+                >
+                  start your 14-day free trial
+                </a>
               </p>
             </div>
 
@@ -33,7 +37,7 @@ class ForgotPassword extends Component {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700"
                     >
-                      Enter your email address
+                      Enter your SSO email or domain
                     </Label>
                     <div className="mt-1">
                       <input
@@ -49,9 +53,9 @@ class ForgotPassword extends Component {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="align-center flex w-auto justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="align-center w-36 flex w-auto justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     >
-                      Send Password Reset Email
+                      Log in
                     </button>
                   </div>
                 </form>
@@ -62,14 +66,9 @@ class ForgotPassword extends Component {
                       Don't have an account?
                     </a>
                   </Link>
-				  <Link href="/login">
+                  <Link href="/login">
                     <a href="#" className="text-link mt-3 block text-sm">
                       Log in with email
-                    </a>
-                  </Link>
-                  <Link href="/sso">
-                    <a href="#" className="text-link mt-3 block text-sm">
-                      Log in with SSO
                     </a>
                   </Link>
                 </div>
@@ -82,4 +81,4 @@ class ForgotPassword extends Component {
   }
 }
 
-export default ForgotPassword
+export default SSO
