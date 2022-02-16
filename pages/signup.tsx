@@ -1,57 +1,15 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
+import { Checkbox, CheckboxIndicator } from '@radix-ui/react-checkbox'
+// import { CheckIcon } from '@radix-ui/react-icons';
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { renderToHTML } from 'next/dist/server/render'
 class SignUp extends Component {
   render() {
     return (
       <html className="min-h-screen bg-white">
         <div className="flex min-h-screen">
-          <div className="block hidden w-0 flex-1 bg-gradient-to-b from-blue-50 to-indigo-200 lg:block">
-            <div className="l:px-28 flex min-h-screen items-center py-12 px-20 lg:px-24 xl:px-32 2xl:px-44">
-              <div>
-                <FontAwesomeIcon
-                  icon={'star'}
-                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
-                />
-                <FontAwesomeIcon
-                  icon={'star'}
-                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
-                />
-                <FontAwesomeIcon
-                  icon={'star'}
-                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
-                />
-                <FontAwesomeIcon
-                  icon={'star'}
-                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
-                />
-                <FontAwesomeIcon
-                  icon={'star'}
-                  style={{ fontSize: 30, color: '#FBBF24' }}
-                />
-                <blockquote className="mt-4 text-gray-900">
-                  <p className="text-xl font-bold">
-                    The missing link between client and builder!!
-                  </p>
-                  <p className="text-sm">
-                    Impeccable experience. Super smooth and couldn't be simpler
-                    to integrate into your project feedback workflow. Trello
-                    export was the cherry on top. Throw out your old revision
-                    processes. This delivers feedback better than any other
-                    service.
-                  </p>
-                  <footer className="mt-6">
-                    <p className="flex flex-col text-sm font-medium">
-                      <span>Rhett Butler</span>
-                      <span className='text-gray-700'>Client Service Analyst</span>
-                    </p>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-          </div>
           <div className="flex flex-1 flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-28 xl:px-60">
             <div className="mx-auto w-full max-w-sm lg:w-96">
               <img
@@ -133,20 +91,29 @@ class SignUp extends Component {
                           aria-describedby="comments-description"
                           name="privacy-terms-of-service"
                           type="checkbox"
-                          className="focus:ring-indigo-500 text-indigo-600 h-4 w-4 rounded border-gray-300"
+                          className="text-indigo-600 h-4 w-4 rounded border-gray-300 focus:ring-blue-500"
                         />
+                        <Checkbox
+                          defaultChecked
+                          id="privacy-terms-of-service"
+                          className="h-4 w-4 justify-center rounded border border-gray-300 hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        >
+                          <CheckboxIndicator>
+                            <FontAwesomeIcon
+                              icon={'check'}
+                              style={{ fontSize: 10 }}
+                            />
+                          </CheckboxIndicator>
+                        </Checkbox>
                       </div>
-                      <div className="ml-3 text-xs">
-                        <label
+                      <div className="ml-3 text-xs text-gray-500">
+                        <Label
                           htmlFor="privacy-terms-of-service"
-                          className="sr-only font-medium text-gray-700"
+                          className="sr-only"
                         >
                           Privacy and Terms of Service
-                        </label>
-                        <p
-                          id="privacy-terms-of-service"
-                          className="text-gray-500"
-                        >
+                        </Label>
+                        <p id="privacy-terms-of-service">
                           I agree to the{' '}
                           <Link href="https://usepastel.com/privacy">
                             <a className="underline">privacy policy</a>
@@ -180,6 +147,52 @@ class SignUp extends Component {
                     </Link>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="block hidden w-0 flex-1 bg-gradient-to-b from-blue-50 to-indigo-200 lg:block">
+            <div className="l:px-28 flex min-h-screen items-center py-12 px-20 lg:px-24 xl:px-32 2xl:px-44">
+              <div>
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24', marginRight: 5 }}
+                />
+                <FontAwesomeIcon
+                  icon={'star'}
+                  style={{ fontSize: 30, color: '#FBBF24' }}
+                />
+                <blockquote className="mt-4 text-gray-900">
+                  <p className="text-xl font-bold">
+                    The missing link between client and builder!!
+                  </p>
+                  <p className="text-sm">
+                    Impeccable experience. Super smooth and couldn't be simpler
+                    to integrate into your project feedback workflow. Trello
+                    export was the cherry on top. Throw out your old revision
+                    processes. This delivers feedback better than any other
+                    service.
+                  </p>
+                  <footer className="mt-6">
+                    <p className="flex flex-col text-sm font-medium">
+                      <span>Rhett Butler</span>
+                      <span className="text-gray-700">
+                        Client Service Analyst
+                      </span>
+                    </p>
+                  </footer>
+                </blockquote>
               </div>
             </div>
           </div>

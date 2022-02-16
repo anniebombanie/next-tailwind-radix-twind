@@ -3,7 +3,22 @@ import { Label } from '@radix-ui/react-label'
 import Link from 'next/link'
 
 class LoginPage extends Component {
+  state = {
+    loggedIn: false,
+  }
+
+  onSubmit = () => {
+	  const { loggedIn} = this.state;
+
+	  this.setState({
+		  loggedIn: loggedIn ? false : true
+	  })
+  }
+
+
   render() {
+    const { loggedIn } = this.state
+
     return (
       <html className="min-h-screen bg-gray-100">
         <div className="login-form">
@@ -13,7 +28,7 @@ class LoginPage extends Component {
                 className="mx-auto h-14 w-auto"
                 src="icon.svg"
                 alt="Pastel"
-				translate="no"
+                translate="no"
               />
               <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
                 Log in to Pastel
@@ -31,6 +46,14 @@ class LoginPage extends Component {
 
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
               <div className="bg-white py-10 px-6 sm:rounded-lg sm:px-10">
+                {loggedIn && (
+                  <div className="mb-6 rounded bg-emerald-50 p-3 text-center">
+                    <p className="text-xs text-emerald-600">
+                      Successfully logged in!
+                    </p>
+                  </div>
+                )}
+
                 <form className="space-y-6" action="#" method="POST">
                   <div>
                     <Label
@@ -45,12 +68,11 @@ class LoginPage extends Component {
                         name="email"
                         type="email"
                         autoComplete="email"
-                        required
+                        // required
                         className="block w-full appearance-none rounded-sm border border-gray-300 px-3 py-3 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                       />
                     </div>
                   </div>
-
                   <div>
                     <Label
                       htmlFor="password"
@@ -64,13 +86,14 @@ class LoginPage extends Component {
                         name="password"
                         type="password"
                         autoComplete="current-password"
-                        required
+                        // required
                         className="block w-full appearance-none rounded-sm border border-gray-300 px-3 py-3 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-blue-500 sm:text-sm"
                       />
                     </div>
                   </div>
                   <div className="flex justify-center">
                     <button
+					onClick={this.onSubmit}
                       type="submit"
                       className="align-center flex w-36 w-auto justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     >
