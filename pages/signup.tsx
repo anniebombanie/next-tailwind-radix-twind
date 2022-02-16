@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class SignUp extends Component {
   render() {
@@ -10,7 +11,11 @@ class SignUp extends Component {
           <div className="relative block hidden w-0 w-full flex-1 bg-gradient-to-b from-blue-50 to-indigo-200 lg:block">
             <div className="absolute">
               <div className="relative lg:col-span-1">
-			  <FontAwesomeIcon icon="fa-solid fa-star" />
+                <FontAwesomeIcon icon={'star'} />
+                <FontAwesomeIcon icon={'star'} />
+                <FontAwesomeIcon icon={'star'} />
+                <FontAwesomeIcon icon={'star'} />
+                <FontAwesomeIcon icon={'star'} />
                 <blockquote className="mt-6 text-white">
                   <p className="text-xl font-medium">
                     The missing link between client and builder!!
