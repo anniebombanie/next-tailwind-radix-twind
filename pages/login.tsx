@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
+import Link from 'next/link'
 
 class LoginPage extends Component {
-  constructor(props) {
-    super(props)
-    this.mustBeLoggedOut = true
-  }
-
-  handleSubmit = ({ email, password }) => {
-    console.log({ email, password })
-  }
-
   render() {
     return (
-      <html class="min-h-screen bg-gray-100">
+      <html className="min-h-screen bg-gray-100">
         <div className="login-form">
           <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -79,36 +71,30 @@ class LoginPage extends Component {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="align-center flex w-36 justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      className="align-center flex w-36 w-auto justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                     >
                       Log in
                     </button>
                   </div>
                 </form>
 
-                <div className="mt-6">
-                  <div className="mt-6 text-center">
-                    <a
-                      href="#"
-                      className="block text-sm font-medium text-blue-500 hover:text-blue-600"
-                    >
+                <div className="mt-6 text-center">
+                  <Link href="/forgot-password">
+                    <a href="#" className="text-link block text-sm">
                       Forgot your password?
                     </a>
+                  </Link>
 
-                    <a
-                      href="#"
-                      className="mt-3 block text-sm font-medium text-blue-500 hover:text-blue-600"
-                    >
+                  <Link href="/signup">
+                    <a className="text-link mt-3 block text-sm">
                       Don't have an account?
                     </a>
-
-                    <a
-                      href="#"
-                      className="mt-3 block text-sm font-medium text-blue-500 hover:text-blue-600"
-                    >
+                  </Link>
+                  <Link href="/sso">
+                    <a href="#" className="text-link mt-3 block text-sm">
                       Log in with SSO
                     </a>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>
