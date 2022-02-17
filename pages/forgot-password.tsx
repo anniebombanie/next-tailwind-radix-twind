@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
 import Link from 'next/link'
+import { prefix } from '../prefix.js'
 
 class ForgotPassword extends Component {
   render() {
@@ -9,16 +10,16 @@ class ForgotPassword extends Component {
         <div className="login-form">
           <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
-			<img
+              <img
                 className="mx-auto h-14 w-auto"
-                src="icon.svg"
+                src={`${prefix}/icon.svg`}
                 alt="Pastel"
-				translate="no"
+                translate="no"
               />
               <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
                 Forgot your password?
               </h2>
-              <p className="mt-4 w-96 text-center text-sm text-gray-600 mx-auto">
+              <p className="mx-auto mt-4 w-96 text-center text-sm text-gray-600">
                 We’ll get this fixed in no time. Enter the email address you
                 used to sign up for Pastel, and we’ll send you a link to reset
                 your password.
@@ -62,7 +63,7 @@ class ForgotPassword extends Component {
                       Don't have an account?
                     </a>
                   </Link>
-				  <Link href="/login">
+                  <Link href="/login">
                     <a href="#" className="text-link mt-3 block text-sm">
                       Log in with email
                     </a>

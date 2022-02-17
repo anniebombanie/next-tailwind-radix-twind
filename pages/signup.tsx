@@ -3,6 +3,7 @@ import { Label } from '@radix-ui/react-label'
 import { Checkbox, CheckboxIndicator } from '@radix-ui/react-checkbox'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { prefix } from '../prefix.js'
 
 class SignUp extends Component {
   render() {
@@ -13,7 +14,7 @@ class SignUp extends Component {
             <div className="mx-auto w-full max-w-sm lg:w-96">
               <img
                 className="mx-auto h-14 w-auto"
-                src="icon.svg"
+                src={`${prefix}/icon.svg`}
                 alt="Pastel"
                 translate="no"
               />

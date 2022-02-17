@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Alert from '../components/Alert'
 import Button from '../components/Button'
 import { tw } from 'twind'
+import { prefix } from '../prefix.js'
 
 const loginLinks = {
   forgotPassword: {
@@ -43,7 +44,7 @@ class LoginPage extends Component {
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
               <img
                 className="mx-auto h-14 w-auto"
-                src="icon.svg"
+                src={`${prefix}/icon.svg`}
                 alt="Pastel"
                 translate="no"
               />
@@ -52,10 +53,7 @@ class LoginPage extends Component {
               </h2>
               <p className="mt-2 text-center text-sm text-gray-600">
                 Or{' '}
-                <a
-                  href="#"
-                  className="font-medium text-blue-500 text-link"
-                >
+                <a href="#" className="text-link font-medium text-blue-500">
                   start your 14-day free trial
                 </a>
               </p>
@@ -63,7 +61,9 @@ class LoginPage extends Component {
 
             <div className={tw`sm:(mx-auto max-w-md) mt-8 w-full`}>
               <div className="bg-white py-10 px-6 sm:rounded-lg sm:px-10">
-                {loggedIn && <Alert variant="success">Successfully logged in!</Alert>}
+                {loggedIn && (
+                  <Alert variant="success">Successfully logged in!</Alert>
+                )}
                 <form className="space-y-6" action="#" method="POST">
                   <div>
                     <Label
@@ -115,7 +115,7 @@ class LoginPage extends Component {
                         {link.text}
                       </a>
                     </Link>
-				  ))}
+                  ))}
                 </div>
               </div>
             </div>
