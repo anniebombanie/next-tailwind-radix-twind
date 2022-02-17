@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
 import Link from 'next/link'
+import Alert from '../components/Alert';
+import { tw } from 'twind'
 
 class LoginPage extends Component {
   state = {
@@ -30,7 +32,7 @@ class LoginPage extends Component {
                 alt="Pastel"
                 translate="no"
               />
-              <h2 className="mt-6 text-center text-3xl font-bold text-gray-900">
+              <h2 className="mt-6 text(center 3xl gray-900) font-bold">
                 Log in to Pastel
               </h2>
               <p className="mt-2 text-center text-sm text-gray-600">
@@ -44,14 +46,10 @@ class LoginPage extends Component {
               </p>
             </div>
 
-            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+            <div className={tw`mt-8 sm:(mx-auto w-full max-w-md)`}>
               <div className="bg-white py-10 px-6 sm:rounded-lg sm:px-10">
                 {loggedIn && (
-                  <div className="mb-6 rounded bg-emerald-50 p-3 text-center">
-                    <p className="text-xs text-emerald-600">
-                      Successfully logged in!
-                    </p>
-                  </div>
+					<Alert success>Successfully logged in!</Alert>
                 )}
 
                 <form className="space-y-6" action="#" method="POST">
