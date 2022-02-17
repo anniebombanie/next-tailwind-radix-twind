@@ -3,28 +3,29 @@ import cx from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface IProps {
-  success?: boolean
-  info?: boolean
-  warning?: boolean
-  error?: boolean
+  variant: 'success' | 'info' | 'warning' | 'error'
   children: ReactNode
 }
 
-const Alert: FC<IProps> = ({ success, info, warning, error, children }) => {
+const Alert: FC<IProps> = ({ variant, children }) => {
+  const styles = {
+    container: cx('flex', 'mb-6', 'rounded', 'p-3', {
+      'bg-emerald-50': variant === 'success',
+      'bg-amber-100': variant === 'warning',
+      'bg-rose-50': variant === 'error',
+      'bg-blue-50': variant === 'info',
+    }),
+    text: cx('text-xs', {
+      'text-emerald-600': variant === 'success',
+      'text-amber-400': variant === 'warning',
+      'text-amber-600': variant === 'error',
+      'text-blue-600': variant === 'info',
+    }),
+  }
+
   return (
-    <div
-      className={cx(
-        'flex',
-        'mb-6',
-        'rounded',
-        'p-3',
-        { 'bg-emerald-50': success },
-        { 'bg-amber-100': warning },
-        { 'bg-rose-50': error },
-        { 'bg-blue-50': info }
-      )}
-    >
-      {success && (
+    <div className={styles.container}>
+      {variant === 'success' && (
         <FontAwesomeIcon
           icon={'circle-check'}
           style={{
@@ -34,7 +35,7 @@ const Alert: FC<IProps> = ({ success, info, warning, error, children }) => {
           }}
         />
       )}
-	  {info && (
+      {variant === 'info' && (
         <FontAwesomeIcon
           icon={'circle-info'}
           style={{
@@ -44,7 +45,7 @@ const Alert: FC<IProps> = ({ success, info, warning, error, children }) => {
           }}
         />
       )}
-	  {warning && (
+      {variant === 'warning' && (
         <FontAwesomeIcon
           icon={'circle-exclamation'}
           style={{
@@ -54,7 +55,7 @@ const Alert: FC<IProps> = ({ success, info, warning, error, children }) => {
           }}
         />
       )}
-	  {error && (
+      {variant === 'error' && (
         <FontAwesomeIcon
           icon={'circle-xmark'}
           style={{
@@ -64,17 +65,7 @@ const Alert: FC<IProps> = ({ success, info, warning, error, children }) => {
           }}
         />
       )}
-      <p
-        className={cx(
-          'text-xs',
-          { 'text-emerald-600': success },
-          { 'text-amber-400': warning },
-          { 'text-amber-600': error },
-          { 'text-blue-600': info }
-        )}
-      >
-        {children}
-      </p>
+      <p className={styles.text}>{children}</p>
     </div>
   )
 }

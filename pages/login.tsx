@@ -1,8 +1,24 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
 import Link from 'next/link'
-import Alert from '../components/Alert';
+import Alert from '../components/Alert'
+import Button from '../components/Button'
 import { tw } from 'twind'
+
+const loginLinks = {
+  forgotPassword: {
+    href: '/forgot-password',
+    text: 'Forgot your password?',
+  },
+  signUp: {
+    href: '/signup',
+    text: "Don't have an account?",
+  },
+  sso: {
+    href: '/sso',
+    text: 'Log in with SSO',
+  },
+}
 
 class LoginPage extends Component {
   state = {
@@ -10,13 +26,12 @@ class LoginPage extends Component {
   }
 
   onSubmit = () => {
-	  const { loggedIn} = this.state;
+    const { loggedIn } = this.state
 
-	  this.setState({
-		  loggedIn: loggedIn ? false : true
-	  })
+    this.setState({
+      loggedIn: loggedIn ? false : true,
+    })
   }
-
 
   render() {
     const { loggedIn } = this.state
@@ -32,26 +47,23 @@ class LoginPage extends Component {
                 alt="Pastel"
                 translate="no"
               />
-              <h2 className="mt-6 text(center 3xl gray-900) font-bold">
+              <h2 className="text(center 3xl gray-900) mt-6 font-bold">
                 Log in to Pastel
               </h2>
               <p className="mt-2 text-center text-sm text-gray-600">
                 Or{' '}
                 <a
                   href="#"
-                  className="font-medium text-blue-500 hover:text-blue-600"
+                  className="font-medium text-blue-500 text-link"
                 >
                   start your 14-day free trial
                 </a>
               </p>
             </div>
 
-            <div className={tw`mt-8 sm:(mx-auto w-full max-w-md)`}>
+            <div className={tw`sm:(mx-auto max-w-md) mt-8 w-full`}>
               <div className="bg-white py-10 px-6 sm:rounded-lg sm:px-10">
-                {loggedIn && (
-					<Alert success>Successfully logged in!</Alert>
-                )}
-
+                {loggedIn && <Alert variant="success">Successfully logged in!</Alert>}
                 <form className="space-y-6" action="#" method="POST">
                   <div>
                     <Label
@@ -90,33 +102,20 @@ class LoginPage extends Component {
                     </div>
                   </div>
                   <div className="flex justify-center">
-                    <button
-					onClick={this.onSubmit}
-                      type="submit"
-                      className="align-center flex w-36 w-auto justify-center rounded-md border border-transparent bg-blue-500 py-3 px-4 text-sm font-medium text-white shadow-sm transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                    >
+                    <Button onClick={this.onSubmit} type="submit">
                       Log in
-                    </button>
+                    </Button>
                   </div>
                 </form>
 
                 <div className="mt-6 text-center">
-                  <Link href="/forgot-password">
-                    <a href="#" className="text-link block text-sm">
-                      Forgot your password?
-                    </a>
-                  </Link>
-
-                  <Link href="/signup">
-                    <a className="text-link mt-3 block text-sm">
-                      Don't have an account?
-                    </a>
-                  </Link>
-                  <Link href="/sso">
-                    <a href="#" className="text-link mt-3 block text-sm">
-                      Log in with SSO
-                    </a>
-                  </Link>
+                  {Object.values(loginLinks).map((link) => (
+                    <Link href={link.href}>
+                      <a href="#" className="text-link mt-3 block text-sm">
+                        {link.text}
+                      </a>
+                    </Link>
+				  ))}
                 </div>
               </div>
             </div>
