@@ -37,7 +37,7 @@ module.exports = {
 		'rose': {
 			50: '#FFF1F2',
 			200: '#FECDD3',
-			300: '#FDA4AF'
+			600: '#FDA4AF'
 		},
 		'amber': {
 			100: '#FEF3C7',

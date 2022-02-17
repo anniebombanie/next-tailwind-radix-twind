@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
 import { Checkbox, CheckboxIndicator } from '@radix-ui/react-checkbox'
-// import { CheckIcon } from '@radix-ui/react-icons';
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { renderToHTML } from 'next/dist/server/render'
+
 class SignUp extends Component {
   render() {
     return (
