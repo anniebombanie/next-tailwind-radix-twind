@@ -1,9 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  .text-link {
-    @apply font-medium text-blue-500 hover:text-blue-600 hover:underline;
-  }
-}
