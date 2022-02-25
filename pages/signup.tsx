@@ -86,24 +86,19 @@ class SignUp extends Component {
                     </div>
                     <div className="relative flex items-center">
                       <div className="flex h-5 items-center">
-                        <input
-                          id="privacy-terms-of-service"
-                          aria-describedby="comments-description"
-                          name="privacy-terms-of-service"
-                          type="checkbox"
-                          className="text-indigo-600 h-4 w-4 rounded border-gray-300 focus:ring-blue-500"
-                        />
                         <Checkbox
                           defaultChecked
+                          asChild
                           id="privacy-terms-of-service"
-                          className="h-4 w-4 justify-center rounded border border-gray-300 hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                        //   className="h-4 w-4 justify-center rounded border border-gray-300 hover:bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                         >
-                          <CheckboxIndicator>
-                            <FontAwesomeIcon
-                              icon={'check'}
-                              style={{ fontSize: 10 }}
-                            />
-                          </CheckboxIndicator>
+                          <input
+                            id="privacy-terms-of-service"
+                            aria-describedby="comments-description"
+                            name="privacy-terms-of-service"
+                            type="checkbox"
+                            className="text-indigo-600 h-4 w-4 rounded border-gray-300 focus:ring-blue-500"
+                          />
                         </Checkbox>
                       </div>
                       <div className="ml-3 text-xs text-gray-500">

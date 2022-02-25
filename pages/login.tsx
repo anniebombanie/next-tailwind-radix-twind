@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Label } from '@radix-ui/react-label'
 import Link from 'next/link'
-import Alert from '../components/Alert'
+import { Alert } from '../components/Alert'
 import Button from '../components/Button'
 import { tw } from 'twind'
 import { prefix } from '../prefix.js'

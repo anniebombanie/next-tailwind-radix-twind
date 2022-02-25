@@ -7,7 +7,7 @@ interface IProps {
   children: ReactNode
 }
 
-const Alert: FC<IProps> = ({ variant, children }) => {
+export const Alert: FC<IProps> = ({ variant, children }) => {
   const styles = {
     container: cx('flex', 'mb-6', 'rounded', 'p-3', {
       'bg-emerald-50': variant === 'success',
@@ -70,4 +70,4 @@ const Alert: FC<IProps> = ({ variant, children }) => {
   )
 }
 
-export default Alert
+// export default Alert

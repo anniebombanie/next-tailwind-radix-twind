@@ -1,3 +1,5 @@
+/* NOTE: Tailwind adds custom root styles */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
